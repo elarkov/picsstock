@@ -1,0 +1,88 @@
+// Тема по умолчанию
+html,
+body{
+  height: 100%;
+  max-width: 100%;
+  overflow-x: hidden;
+  overscroll-behavior: contain;
+}
+
+body {
+  min-height: 100vh;
+  min-width: 320px;
+  font-family: $default-font;
+  text-rendering: optimizeSpeed;
+  line-height: 1.6;
+  -webkit-font-smoothing: antialiased;
+  scroll-behavior: smooth;
+  background: $white;
+  padding-bottom: 60px;
+  @include xl-block {
+    padding-bottom: 0;  
+  }
+}
+
+.container {
+  @include wrapper();
+  max-width: 360px;
+  @include sm-block {
+    max-width: 1190px;
+  }
+  @include md-block {
+    max-width: 980px;
+  }
+  @include xl-block {
+    max-width: 1190px;
+  }
+}
+
+/**
+* Scroll bar style
+**/
+body::-webkit-scrollbar { width: 15px; }
+body::-webkit-scrollbar-track { 
+  background: $white; 
+  border-left: 1px solid $cultured;
+}
+
+body::-webkit-scrollbar-thumb {
+  background: hsl(0, 0%, 80%);
+  border: 3px solid $white;
+  border-radius: 10px;
+}
+body::-webkit-scrollbar-thumb:hover {
+  background: hsl(0, 0%, 70%);
+}
+
+.has-scrollbar {
+  padding-bottom: 5px;
+  &::-webkit-scrollbar {
+    width: 12px;
+    height: 12px;
+  }
+  &::-webkit-scrollbar-thumb {
+    background: transparent;
+    border: 3px solid $white;
+    border-radius: 20px;
+    &:hover {
+      background: hsl(0, 0%, 80%);
+    }
+  }
+  &:hover {
+    &::-webkit-scrollbar-thumb {
+      background: hsl(0, 0%, 90%);
+    }
+  }
+}
+
+.title {
+  color: $eerie-black;
+  font-size: $fs-5;
+  font-weight: 600;
+  letter-spacing: 0.4px;
+  text-transform: capitalize;
+  padding-bottom: 10px;
+  border-bottom: 1px solid $cultured;
+  margin-bottom: 30px;
+
+}
